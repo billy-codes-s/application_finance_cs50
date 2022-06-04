@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your stocks
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>symbol</th>
+                <th>name</th>
+                <th>price</th>
+            </tr>
+        </thead>
+        {% for owns in ownings %}
+
+            <tr>
+
+                <td>
+                    {{owns.symbol}}
+                </td>
+
+
+                <td>
+                    {{owns.name}}
+                </td>
+
+
+                <td>
+                    {{owns.price | usd}}
+                </td>
+
+            </tr>
+        {% endfor %}
+
+</table>
+
+
+{% endblock %}
